@@ -16,13 +16,25 @@
   }
 
   $query = "
-    SELCT *
-    FROM inventario
+    SELECT *
+    FROM `inventario`
     ";
 
   $res = $connection ->query($query);
 
+  $data = [];
+
+  if ($res && $res -> num_rows > 0){
+
+    while($row = $res -> fetch_assoc()) {
+
+      $data[] = $row;
+ 
+    }
+  
+  }
+
   $connection -> close();
 
-  echo json_encode($res);
+  echo json_encode($data);
 ?>
