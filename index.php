@@ -16,10 +16,10 @@
     <!-- TEMPLATE -->
     <script id="item-template" type="text/x-handlebars-template">
     <li class='list-item' data-id={{id}}>
-          <span class=item-name>{{nome-bevanda}}</span>
-          <span class='item-manufacturer'>{{marca}}</span>
-          <span class='item-price' >{{prezzo}}</span>
-          <span class='item-exp-date' > {{data_di_scadenza}}</span>
+          <span class=item-name>Nome: {{nome_bevanda}}</span>
+          <span class='item-manufacturer'>Produttore: {{marca}}</span>
+          <span class='item-price' >Prezzo: {{prezzo}}€ </span>
+          <span class='item-exp-date'>Scadenza: {{data_di_scadenza}}</span>
         </li>
     </script>
 
