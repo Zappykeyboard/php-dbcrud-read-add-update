@@ -15,6 +15,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8"></script>
     <!-- TEMPLATE -->
     <script id="item-template" type="text/x-handlebars-template">
+    <li class='list-item' data-id={{id}}>
+          <span class=item-name>{{nome-bevanda}}</span>
+          <span class='item-manufacturer'>{{marca}}</span>
+          <span class='item-price' >{{prezzo}}</span>
+          <span class='item-exp-date' > {{data_di_scadenza}}</span>
+        </li>
     </script>
 
     <!-- CSS: MY STYLE -->
@@ -24,6 +30,17 @@
     <title>Inventario</title>
   </head>
   <body>
- 
+    <div class="container">
+    <h1>INVENTARIO</h1>
+
+    <div class="items-container">
+      <ul id='list'>
+        
+      </ul>
+    </div>
+    
+    
+    
+    </div>
   </body>
 </html>
