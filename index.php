@@ -20,6 +20,7 @@
           <span class='item-manufacturer'>Produttore: {{marca}}</span>
           <span class='item-price' >Prezzo: {{prezzo}}€ </span>
           <span class='item-exp-date'>Scadenza: {{data_di_scadenza}}</span>
+          <button class='update-item'>Modifica...</button>
         </li>
     </script>
 
@@ -31,14 +32,23 @@
   </head>
   <body>
     <div class="container">
-    <h1>INVENTARIO</h1>
+      <h1>INVENTARIO</h1>
+      <div class="new-item-cont">
+        <input type="text" name="" class="new-name" placeholder='Nome bevanda'>
+        <input type="text" name="" class="new-manufacturer" placeholder='Nome marca'>
+        <input type="text" name="" class="new-price" placeholder='prezzo'>
+        <input type="date" name="" class="new-exp-date">
+        <button class='add-item'>Aggiungi prodotto</button>
+      </div>
 
-    <div class="items-container">
-      <ul id='list'>
-        
-      </ul>
-    </div>
-    
+
+      <div class="items-container">
+      
+        <ul id='list'>
+          
+        </ul>
+      </div>
+      
     
     
     </div>
