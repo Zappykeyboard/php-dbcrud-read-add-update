@@ -1,6 +1,7 @@
 function init() {
   console.log("Hello World");
   getInventory();
+  $(document).on('click', '.add-item', addToInventory);
 }
 
 $(document).ready(init);
@@ -13,6 +14,7 @@ function getInventory(){
     method:'GET',
     success:function(data){
       console.log(data);
+      $('#list').html("");
       printInventory(data);
     } ,
     error: function(err){
@@ -33,7 +35,42 @@ function printInventory(data){
     var el = data[i];
  
     html = template(el);
-    $('.container').append(html);
+    $('#list').append(html);
   }
 
+}
+
+
+function addToInventory() {
+  var name = $('.new-name').val();
+  var manufacturer = $('.new-manufacturer').val();
+  var price = Number($('.new-price').val());
+  var date = $('.new-exp-date').val();
+  console.log(date)
+
+  if(name && manufacturer && price && date){
+
+    var theData = {
+      name: name,
+      manufacturer: manufacturer,
+      price: price,
+      expiration: date
+    }
+    console.log(theData);
+
+    $.ajax({
+      url: 'inventario-new.php',
+      method:'GET',
+      data:theData,
+      success:function(data){
+        console.log(data);
+        getInventory();
+      } ,
+      error: function(err){
+        console.log(err);
+        
+      }
+    })
+
+  }
 }
